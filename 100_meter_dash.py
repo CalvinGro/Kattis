@@ -21,6 +21,7 @@ bsave = 0
 brund = 0
 brunt = 0
 
+
 for i in range(n):
     x = False
     if rund <100:
@@ -40,25 +41,30 @@ for i in range(n):
         i-=1
        
     if x:
+        count = 0
         while brund>=100:
-            brund-=segments[bsave-1][0]
-            brunt-=segments[bsave-1][1]
-            if bsave<=i:
+            brund-=segments[bsave][0]
+            brunt-=segments[bsave][1]
+            last_sub_dist = segments[bsave][0]
+            last_sub_time = segments[bsave][1]
+            if bsave<i:
                 bsave+=1
-       
-        if bsave>1:
-            brund+=segments[bsave-1][0]
-
+            count += 1
+        if count == 1:
+            bsave-=1
+            brund+=last_sub_dist
+        elif count > 1:
+            brund+=last_sub_dist
 
         if brund>=100:
             p = brund-100
-            bprop = 1-(p/segments[bsave-1][0])
-            brunt += segments[bsave-1][1]*bprop
+            bprop = 1-(p/last_sub_dist)
+            brunt += last_sub_time*bprop
             if brunt<final:
                 final = brunt
             
-            brunt -= segments[bsave-1][1]*bprop
-            brunt+=segments[bsave-1][1]
+            brunt -= last_sub_time*bprop
+            brunt+=last_sub_time
    
     if rund >= 100:
         s = 100-rund2
@@ -79,4 +85,6 @@ for i in range(n):
        
     rund2 = rund
    
-print(final) 
+   
+   
+print("\n\n",final)    
