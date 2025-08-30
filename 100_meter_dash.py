@@ -34,10 +34,6 @@ for i in range(n):
             x = True
             brund+=segments[i][0]
             brunt+=segments[i][1]
-            print(f"Dist: {segments[i][0]}")
-            print(f"Time: {segments[i][1]}")
-            print(f"Brund with new seg: {brund}")
-            print(f"Brunt with new seg: {brunt}")
         rund+=segments[i][0]
  
     else:
@@ -47,34 +43,22 @@ for i in range(n):
         while brund>=100:
             brund-=segments[bsave-1][0]
             brunt-=segments[bsave-1][1]
-            print(f"brund subtracting: {segments[bsave-1][0]}")
-            print(f"brund: {brund}")
-            print(f"prev bsave: {bsave}")
             if bsave<=i:
                 bsave+=1
-                print(f"new bsave: {bsave}\n")
        
         if bsave>1:
-            print(f"brund: {brund}")
             brund+=segments[bsave-1][0]
-            print(f"adding {segments[bsave-1][0]}")
-            print(f"new brund: {brund}")
 
 
         if brund>=100:
             p = brund-100
-            print(f"brund: {brund}")
             bprop = 1-(p/segments[bsave-1][0])
             brunt += segments[bsave-1][1]*bprop
             if brunt<final:
-                print("NEW FINAL\n")
                 final = brunt
-            print(f"Tried: {brunt}\n_______\n\n")
             
             brunt -= segments[bsave-1][1]*bprop
             brunt+=segments[bsave-1][1]
-        else:
-            print("Brund < 100\n_______\n\n")
    
     if rund >= 100:
         s = 100-rund2
@@ -95,6 +79,4 @@ for i in range(n):
        
     rund2 = rund
    
-   
-   
-print("\n\n",final)    
+print(final) 
