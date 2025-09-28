@@ -1,0 +1,1 @@
+c:\Users\Frogg\OneDrive\ -\ Concordia\ University,\ Nebraska\Desktop\Programming\Kattis\Rust\kattis_solutions\target\debug\kattis_solutions.exe: c:\Users\Frogg\OneDrive\ -\ Concordia\ University,\ Nebraska\Desktop\Programming\Kattis\Rust\kattis_solutions\src\main.rs
