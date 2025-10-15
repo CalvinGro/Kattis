@@ -1,0 +1,1 @@
+c:\Users\Frogg\OneDrive\ -\ Concordia\ University,\ Nebraska\Desktop\Programming\Kattis\Rust_Kattis\flea_on_a_chessboard\target\debug\flea_on_a_chessboard.exe: c:\Users\Frogg\OneDrive\ -\ Concordia\ University,\ Nebraska\Desktop\Programming\Kattis\Rust_Kattis\flea_on_a_chessboard\src\main.rs

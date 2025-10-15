@@ -1,0 +1,1 @@
+C:\Users\Frogg\OneDrive\ -\ Concordia\ University,\ Nebraska\Desktop\Programming\Kattis\Rust_Kattis\A1_paper\target\debug\A1_paper.exe: C:\Users\Frogg\OneDrive\ -\ Concordia\ University,\ Nebraska\Desktop\Programming\Kattis\Rust_Kattis\A1_paper\src\main.rs
