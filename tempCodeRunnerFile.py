@@ -1,1 +1,1 @@
-) and c != 2
+primes_found

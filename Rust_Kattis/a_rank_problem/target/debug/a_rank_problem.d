@@ -1,0 +1,1 @@
+C:\Users\Frogg\OneDrive\ -\ Concordia\ University,\ Nebraska\Desktop\Programming\Kattis\Rust_Kattis\a_rank_problem\target\debug\a_rank_problem.exe: C:\Users\Frogg\OneDrive\ -\ Concordia\ University,\ Nebraska\Desktop\Programming\Kattis\Rust_Kattis\a_rank_problem\src\main.rs
