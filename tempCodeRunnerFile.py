@@ -1,1 +1,1 @@
-primes_found
+print(cans)

@@ -1,5 +1,3 @@
-# unsolved
-
 import sys
 from queue import Queue
 data = sys.stdin.buffer.read().split(b'\n')
@@ -8,19 +6,20 @@ buses = 0; islands = 0; bridges = 0
 maps = []
 cur = []
 unions = []
+cur_len = 0
 
 # r and c of the first "X"
 def dfs_islands(cur) -> int:
     q = Queue()
     count = 0
     types = {"#","X"}
-    for r in range(len(cur)):
-            for c in range(len(cur[0])):
-                if cur[r][c] in types:
+    for r1 in range(len(cur)):
+            for c1 in range(len(cur[0])):
+                if cur[r1][c1] in types:
                     count += 1
-                    q.put((r,c))
+                    q.put((r1,c1))
                     currentQ = set()
-                    currentQ.add((r,c))
+                    currentQ.add((r1,c1))
 
                     # search all surrounding area
                     while not q.empty():
@@ -49,7 +48,8 @@ def dfs_bridges(cur) -> int:
                         down = r+1
                         while up >= 0 and cur[up][c] == "B": cur[up][c] = "."; up -= 1
                         while down < len(cur) and cur[down][c] == "B": cur[down][c] = "."; down += 1
-                        unions.append((cur[up][c], cur[down][c]))
+                        if 0 <= up < len(cur) and 0 <= down < len(cur):
+                            unions.append((cur[up][c], cur[down][c]))
                         
 
                     # if bridge extends across row
@@ -58,7 +58,8 @@ def dfs_bridges(cur) -> int:
                         right = c+1
                         while left > 0 and cur[r][left] == "B": cur[r][left] = "."; left -= 1
                         while right < len(cur[0]) and cur[r][right] == "B": cur[r][right] = "."; right += 1
-                        unions.append((cur[r][left], cur[r][right]))
+                        if 0 <= left < len(cur[0]) and 0 <= right < len(cur[0]):
+                            unions.append((cur[r][left], cur[r][right]))
                      
     
     return count    
@@ -76,7 +77,8 @@ for line in iter(data):
     line = line.decode()
 
     # if end of current map reached
-    if line == "": # if len(line) != cur_len and cur !=[]: 
+    if len(line) != cur_len and cur !=[]: 
+        
         unions = []
         islands = dfs_islands(cur)
         bridges = dfs_bridges(cur)
@@ -84,11 +86,11 @@ for line in iter(data):
         buses = [i for i in range(islands+1)]
         for n1, n2 in unions:
             if n1 == "." or n2 == ".": continue
+            if n1 == "B" or n2 == "B": continue
             p1, p2 = find(n1, buses), find(n2, buses)
-
             if p1 == p2: continue
             buses[p1] = p2
-        
+
         count = -1
         
         for i, bus in enumerate(buses):
@@ -102,16 +104,17 @@ for line in iter(data):
 
     # build new line of map
     cur.append(list(line))
+    cur_len = len(line)
+else:
+    i = 0
+    for m in maps:
+        i += 1
 
-i = 0
-for m in maps:
-    i += 1
-
-    print(f"Map {i}")
-    print(f"islands: {m[1]}")
-    print(f"bridges: {m[2]}")
-    print(f"buses needed: {m[0]}")
-    print()
+        print(f"Map {i}")
+        print(f"islands: {m[1]}")
+        print(f"bridges: {m[2]}")
+        print(f"buses needed: {m[0]}")
+        print()
 
 
 
