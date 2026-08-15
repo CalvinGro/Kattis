@@ -16,10 +16,10 @@ class Node:
         self.left = None
         self.right = None
 
-    def rec_find_range(self) -> tuple[int, int]:
-        # if already checked
-        if self in checked: return (self.leftReach, self.rightReach)
-        checked.add(self)
+    # def rec_find_range(self) -> tuple[int, int]:
+    #     # if already checked
+    #     if self in checked: return (self.leftReach, self.rightReach)
+    #     checked.add(self)
 
         
 

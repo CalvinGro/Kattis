@@ -1,3 +1,4 @@
+# unfinished
 
 # get input
 m = int(input())
@@ -34,20 +35,20 @@ def binary_search(price):
         
 
 # main loop
-for price in prices[1:]:
+# for price in prices[1:]:
 
-    m -= 1
-    # if new lowest
-    if price < lowests[-1]:
-        lowests.append(price)
-        indices[price] = m
-        output.append("infinity")
-        continue
+#     m -= 1
+#     # if new lowest
+#     if price < lowests[-1]:
+#         lowests.append(price)
+#         indices[price] = m
+#         output.append("infinity")
+#         continue
 
-    # otherwise BS to find price it fits in
-    prev = binary_search(price, m)
+#     # otherwise BS to find price it fits in
+#     prev = binary_search(price, m)
 
-    output.append(indices[prev]-m)
+#     output.append(indices[prev]-m)
 
 output.reverse()
 
