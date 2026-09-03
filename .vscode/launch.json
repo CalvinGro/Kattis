@@ -8,10 +8,10 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Frogg/OneDrive - Concordia University, Nebraska/Desktop/Programming/Kattis",
-      "program": "c:/Users/Frogg/OneDrive - Concordia University, Nebraska/Desktop/Programming/Kattis/build/Debug/outDebug",
+      "cwd": "c:/Users/Frogg/OneDrive - Concordia University, Nebraska/Desktop/Programming/Kattis/C_Kattis",
+      "program": "c:/Users/Frogg/OneDrive - Concordia University, Nebraska/Desktop/Programming/Kattis/C_Kattis/build/Debug/outDebug",
       "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
+      "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
